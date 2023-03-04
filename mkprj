@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+use Time::Piece;
+my $date = localtime->strftime('%Y-%m-%d');
+clear_screen();
+print"********************\n";
+print"Make Project Script\n";
+print"********************\n";
+print"please prove camelCase name\n";
+# $name = <STDIN>;
+# print"please provide project details/readme\n";
+# $deets = <STDIN>;
+# print"Please also list tags\n";
+# $tags = <STDIN>;
+
+# print"the name is $name\n";
+# print"the deets are\n$deets\n";
+# print"and the tagsa are\n$tags";
+
+
+print $date;
+exit(0);
+sub clear_screen
+{
+    system("clear");
+}
