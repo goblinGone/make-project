@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+sub clrScrn {
+    system("clear");
+}
+sub prompt {
+  my ($query) = @_; # take a prompt string as argument
+  local $| = 1; # activate autoflush to immediately show the prompt
+  print $query;
+  chomp(my $answer = <STDIN>);
+  return $answer;
+}
+sub prompt_yn {
+  my ($query) = @_;
+  my $answer = prompt("$query (Y/N): ");
+  return lc($answer) eq 'y';
+}
+clrScrn();
+if (prompt_yn("Do you want to import a list")){
+    my $list1 = prompt("Give the name of the first list file:\n");
+    if (prompt_yn("Do you want to import another gene list file")){
+         my $list2 = prompt("Give the name of the second list file:\n");
+         # if (prompt_yn("Do you want to import another gene list file")){
+         # ...
+    }
+}

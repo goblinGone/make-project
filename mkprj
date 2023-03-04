@@ -1,25 +1,130 @@
 #!/usr/bin/perl
+use strict;
+use warnings;
+use Switch;
 use Time::Piece;
+
 my $date = localtime->strftime('%Y-%m-%d');
+my $input = '';
 clear_screen();
 print"********************\n";
 print"Make Project Script\n";
 print"********************\n";
 print"please prove camelCase name\n";
-# $name = <STDIN>;
-# print"please provide project details/readme\n";
-# $deets = <STDIN>;
-# print"Please also list tags\n";
-# $tags = <STDIN>;
+my $name = <STDIN>;
+print"please provide project details/readme\n";
+my $deets = <STDIN>;
+print"Please also list tags\n";
+my $tags = <STDIN>;
 
-# print"the name is $name\n";
-# print"the deets are\n$deets\n";
-# print"and the tagsa are\n$tags";
+#storage Dir, ideally in projects folder
+my $dirStorage = "/home/jammers/Project_archive/$name";
 
+my $input = '';
 
-print $date;
-exit(0);
-sub clear_screen
+while ($input ne '6')
 {
+    clear_screen();
+    print "********************\n".
+     "Make Project Script\n".
+     "********************\n".
+     "1. Create a storage directory\n".
+     "2. edit commands\n". 
+     "3. admin commands\n". 
+     "4. network commands\n". 
+     "5. games\n".
+     "6. exit\n";
+
+    print "Enter your choice: ";
+    $input = <STDIN>;
+    chomp($input);
+    switch ($input)
+    {
+        case '1'
+        {
+            $input = '';
+            while ($input ne '4')
+            {
+                mkdir $dirStorage
+                # clear_screen();
+                # print "1. edit > option 1\n".
+                #       "2. edit > option 1\n".
+                #       "3. edit > option 3\n".
+                #       "4. return to main menu\n";
+
+                # print "Enter your choice: ";
+                # $input = <STDIN>;
+                # chomp($input);
+            }
+            $input = '';
+        }
+        case '2'
+        {
+            $input = '';
+            while ($input ne '4')
+            {
+                clear_screen();
+                print "1. edit > option 1\n".
+                      "2. edit > option 1\n".
+                      "3. edit > option 3\n".
+                      "4. return to main menu\n";
+
+                print "Enter your choice: ";
+                $input = <STDIN>;
+                chomp($input);
+            }
+            $input = '';
+        }
+        case '3'
+        {
+            $input = '';
+            while ($input ne '4')
+            {
+                clear_screen();
+                print "1. edit > option 1\n".
+                      "2. edit > option 1\n".
+                      "3. edit > option 3\n".
+                      "4. return to main menu\n";
+
+                print "Enter your choice: ";
+                $input = <STDIN>;
+                chomp($input);
+            }
+            $input = '';
+        }        
+        case '4'
+        {
+            $input = '';
+            while ($input ne '4')
+            {
+                clear_screen();
+                print "1. edit > option 1\n".
+                      "2. edit > option 1\n".
+                      "3. edit > option 3\n".
+                      "4. return to main menu\n";
+
+                print "Enter your choice: ";
+                $input = <STDIN>;
+                chomp($input);
+            }
+            $input = '';
+        }
+    }
+}
+exit(0);
+sub clear_screen {
     system("clear");
+}
+
+sub prompt {
+  my ($query) = @_; # take a prompt string as argument
+  local $| = 1; # activate autoflush to immediately show the prompt
+  print $query;
+  chomp(my $answer = <STDIN>);
+  return $answer;
+}
+sub prompt_yn {
+  my ($query) = @_;
+  my $answer = prompt("$query (Y/N): ");
+  return lc($answer) eq 'y';
 }
