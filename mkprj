@@ -10,7 +10,7 @@ clear_screen();
 print"********************\n";
 print"Make Project Script\n";
 print"********************\n";
-print"please prove camelCase name\n";
+print"please provide a project name\n";
 my $name = <STDIN>;
 print"please provide project details/readme\n";
 my $deets = <STDIN>;
@@ -42,21 +42,25 @@ while ($input ne '6')
     {
         case '1'
         {
-            $input = '';
-            while ($input ne '4')
-            {
-                mkdir $dirStorage
-                # clear_screen();
-                # print "1. edit > option 1\n".
-                #       "2. edit > option 1\n".
-                #       "3. edit > option 3\n".
-                #       "4. return to main menu\n";
+            mkdir $dirStorage;
+            clear_screen();
+            print "\nSuccess, Directory created!\n";
+            mkdir $dirStorage;
+            # $input = '';
+            # while ($input ne '4')
+            # {
+            #     mkdir $dirStorage
+            #     # clear_screen();
+            #     # print "1. edit > option 1\n".
+            #     #       "2. edit > option 1\n".
+            #     #       "3. edit > option 3\n".
+            #     #       "4. return to main menu\n";
 
-                # print "Enter your choice: ";
-                # $input = <STDIN>;
-                # chomp($input);
-            }
-            $input = '';
+            #     print "Enter your choice: ";
+            #     $input = <STDIN>;
+            #     # chomp($input);
+            # }
+            # $input = '';
         }
         case '2'
         {
