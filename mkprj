@@ -19,6 +19,8 @@ my $tags = <STDIN>;
 
 #storage Dir, ideally in projects folder
 my $dirStorage = "/home/jammers/Project_archive/$name";
+my $prjStorage = "/home/jammers/Zettel/GoblinKnows/FOREST/04-dataBase/projects/$name.md";
+my $tskStorage = "/home/jammers/Zettel/GoblinKnows/TOOLS/projectFile_taskList/$name.md";
 
 my $input = '';
 
@@ -29,9 +31,9 @@ while ($input ne '6')
      "Make Project Script\n".
      "********************\n".
      "1. Create a storage directory\n".
-     "2. edit commands\n". 
-     "3. admin commands\n". 
-     "4. network commands\n". 
+     "2. create a project file in Obsidian\n". 
+     "3. create a taskList file in Obsidian\n". 
+     "4. choose a licence\n". 
      "5. games\n".
      "6. exit\n";
 
@@ -42,25 +44,10 @@ while ($input ne '6')
     {
         case '1'
         {
-            mkdir $dirStorage;
             clear_screen();
             print "\nSuccess, Directory created!\n";
             mkdir $dirStorage;
-            # $input = '';
-            # while ($input ne '4')
-            # {
-            #     mkdir $dirStorage
-            #     # clear_screen();
-            #     # print "1. edit > option 1\n".
-            #     #       "2. edit > option 1\n".
-            #     #       "3. edit > option 3\n".
-            #     #       "4. return to main menu\n";
 
-            #     print "Enter your choice: ";
-            #     $input = <STDIN>;
-            #     # chomp($input);
-            # }
-            # $input = '';
         }
         case '2'
         {

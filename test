@@ -1,4 +1,10 @@
 #!/usr/bin/perl
+use warnings;
+#storage Dir, ideally in projects folder
+# $dirStorage = "/home/jammers/Project_archive/$name";
+
+
+
 sub clrScrn {
     system("clear");
 }
@@ -15,6 +21,7 @@ sub prompt_yn {
   return lc($answer) eq 'y';
 }
 clrScrn();
+print"please work";
 if (prompt_yn("Do you want to import a list")){
     my $list1 = prompt("Give the name of the first list file:\n");
     if (prompt_yn("Do you want to import another gene list file")){
@@ -23,3 +30,4 @@ if (prompt_yn("Do you want to import a list")){
          # ...
     }
 }
+print "$list1 \n $list2";
