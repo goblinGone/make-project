@@ -13,6 +13,7 @@ print "*********************************************\n".
 "** please offer a name: ";
 my $name = <STDIN>;
 chomp($name);
+$name=~s/ /-/g;
 print "** please offer some tags seperated by a space: ";
 my $tags = <STDIN>;
 chomp($tags);
@@ -20,10 +21,10 @@ print "* please offer priority; ";
 my $priority = <STDIN>;
 chomp($priority);
 
-my $dirStorage = "/home/jammers/Project_archive/$name";
+my $dirStorage = "/home/goblin/Project_archive/$name";
 mkdir $dirStorage; #or die "could not create Directory '$dirStorage' $!";
 print "** done makeDir\n";
-my $projfile = "/home/jammers/Zettel/GoblinKnows/FOREST/04-dataBase/projects/$name.md";
+my $projfile = "/home/goblin/Zettel/GoblinKnows/FOREST/04-dataBase/projects/$name.md";
 open(my $fh, '>', $projfile) or die "could not open file '$projfile' $!";
 print $fh "---\n".
 "alias:\n".
@@ -46,13 +47,13 @@ print $fh "---\n".
 "where !completed & projectMain = \"$name\" & type = \"taskList\"\n".
 "```\n\n\n".
 "[[$name-taskList]]\n".
-"[$name folder](file:///home/jammers/Project_archive/$name)\n".
+"[$name folder](file:///home/goblin/Project_archive/$name)\n".
 "[This project is licenced using the Gnu GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)";
 
 
 close $fh;
 print "** done project page\n";
-my $taskfile = "/home/jammers/Zettel/GoblinKnows/TOOLS/projectFile_taskLists/$name-taskList.md";
+my $taskfile = "/home/goblin/Zettel/GoblinKnows/TOOLS/projectFile_taskLists/$name-taskList.md";
 open(my $tf, '>', $taskfile) or die "could not open file '$taskfile' $!";
 print $tf "---\n".
 "cssstyle:\n".
